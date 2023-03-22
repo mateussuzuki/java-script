@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paises</title>
+    <style>
+        body {
+            font: normal 20pt arial;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Estrangeiro</h1>
+     De qual país você é?  <input type="text" name="txt" id="itxt">
+     <input type="button" value="Verificar" onclick="verificar()">
+     <div id="res">
+
+     </div>
+     <script>
+        function verificar() {
+            var a = document.getElementById('itxt')
+            var a = String(itxt.value)
+            var res = document.getElementById('res')
+            res.innerHTML = `Já que você mora em ${a} logo: `
+            if (a != 'brasil') {
+                res.innerHTML += `você é estrangeiro`
+            } else {
+                res.innerHTML += `você não é estrangeiro`
+            }
+        }
+
+     </script>
+
+</body>
+</html>
