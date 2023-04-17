@@ -4,22 +4,24 @@ function verificar() {
     var pass = parseInt(document.querySelector("#number-passo").value)
     var res = document.querySelector("#res")
     if (!ini || !pass || !fim) {
-        return window.alert(``)
+        return window.alert("[ERRO]: Faltam dados")
     }
     if (pass < 1) {
-        return window.alert("asdkolasdkodksa")
+        return window.alert("[ERRO] O passo não pode ser negativo")
     }
     if (ini > fim) {
-        res.innerHTML = `${ini}\n`
+        // Contagem regressiva
+        res.innerHTML = `${ini}, `
         while (ini - pass > fim) {
             ini -= pass
-            res.innerHTML += `${ini}\n`
+            res.innerHTML += `${ini}, `
         }
     } else {
-        res.innerHTML = `${ini}\n`
+        // Contagem crescente
+        res.innerHTML = `${ini}, `
         while (ini + pass < fim) {
             ini += pass
-            res.innerHTML += `${ini}\n`
+            res.innerHTML += `${ini}, `
         }
     }
 }
