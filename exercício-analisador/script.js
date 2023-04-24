@@ -1,6 +1,5 @@
 
 let arr = []
-let maiornumerolista
 function adicionar() {
     let num = document.querySelector("#number-num").value
     let select = document.querySelector("#tabela")
@@ -12,15 +11,17 @@ function adicionar() {
             sec.innerHTML = `O valor ${num} foi adicionado`
             select.appendChild(sec)
         }
-        let res = []
         arr.push(num)
     }      
 
     function finalizar() {
-        arr.forEach(item)
-            if(arr.every(item2 => item <= item2)) {
-                let maiornumerolista = item
-            }
-        
+        let maiornumerolista
+        let menornumerolista
+        arr.forEach(item => {
+            if (arr.every(item2 => item >= item2)) 
+                maiornumerolista = item
+            if (arr.every(item2 => item <= item2))
+                menornumerolista = item
+        });
+        document.querySelector("#res").innerHTML = `O maior item da lista é ${maiornumerolista} <br> O menor item da lista é ${menornumerolista}`
     }
-    console.log(maiornumerolista)
